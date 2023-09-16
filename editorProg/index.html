@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editor de Imagem</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Editor de Imagem da <a href="https://elevateloja.com" target="_blank"> <img src="elevateLOGO cortada.png" alt="Elevate"></a></h1>
+            
+            <h5>FAÇA O UPLOAD DA IMAGEM QUE VC QUER EDITAR AQUI</h5>
+            <input type="file" id="inputImage" accept="image/*">
+            <br>
+            <h5>FAÇA O UPLOAD DA MARCA DAGUA AQUI</h5>
+            <input type="file" id="watermarkImage" accept="image/*" onchange="previewWatermarkImage()">
+            <br>
+            <br>
+            <br>
+            <br>
+            <label for="watermarkWidth">Largura da Marca d'Água:</label>
+            <input type="number" id="watermarkWidth" value="150">
+            <br>
+            <br>
+            <label for="watermarkHeight">Altura da Marca d'Água:</label>
+            <input type="number" id="watermarkHeight" value="60">
+            <br>
+            <br>
+            <label for="position">Posição da Marca d'Água:</label>
+            <select id="position">
+                <option value="bottom-center">Centro Inferior</option>
+                <option value="top-left">Superior Esquerda</option>
+                <option value="top-center">Centro Superior</option>
+                <option value="top-right">Superior Direita</option>
+                <option value="bottom-left">Inferior Esquerda</option>
+                <option value="bottom-right">Inferior Direita</option>
+            </select>
+            <br>
+            <button onclick="processImage()">Editar Imagem</button>
+        </div>
+        <div class="right">
+            <div id="outputContainer">
+                <img id="output" src="">
+            </div>
+            <div id="watermarkPreviewContainer">
+                <h2>Pré-visualização da marca d'água:</h2>
+                <img id="watermarkPreview" src="">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
